@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import styles from "../styles/Home.module.scss";
 export default function Home() {
@@ -12,7 +13,9 @@ export default function Home() {
 
       <body>
         {/* <!-- nav --> */}
-       <Nav/>
+        <Nav />
+        
+        <Header/>
       </body>
     </div>
   );

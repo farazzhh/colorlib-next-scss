@@ -13,14 +13,16 @@ html {
   transition: all 0.2s ease-out;
 }
 
-body{
+body {
   position: relative;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 li {
   list-style: none;
 }
 
-.slide-to-right{
+.slide-to-right {
   transform: none;
 }
