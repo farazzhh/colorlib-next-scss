@@ -5,6 +5,7 @@
   width: 100vw;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   display: flex;
+  background-color: white;
   align-items: center;
   position: fixed;
   top: 0;
@@ -35,7 +36,7 @@
 
   &__menu {
     display: flex;
-    @media (max-width: 768px) {
+    @media (max-width: 990px) {
       display: none;
     }
 
@@ -45,15 +46,25 @@
       place-items: center;
       text-align: center;
       li {
-        font-weight: 300;
+        font-weight: 400;
+        font-size: 17px;
         list-style: none;
-        margin-right: 15px;
+        margin-right: 45px;
         color: gray;
         cursor: pointer;
-        text-shadow: 0 0px 2px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        transition: 0.2s all ease-in-out;
         &:hover {
           color: $black-color;
+          div{
+            height: 2px;
+            width: 100%;
+            background-color: $first-color;
+          }
         }
+       div{
+         width: 0;
+       }
       }
     }
 
@@ -85,7 +96,7 @@
     &:active {
       transform: rotate(270deg);
     }
-    @media (min-width: 768px) {
+    @media (min-width: 990px) {
       display: none;
     }
   }
@@ -109,7 +120,7 @@
     color: $white-color;
     text-align: center;
     column-gap: 30px;
-box-shadow: 0 0 10px $black-color;
+    box-shadow: 0 0 10px $black-color;
     // close Icon
     & > svg {
       font-size: 40px;

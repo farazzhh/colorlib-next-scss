@@ -30,11 +30,21 @@ const Nav = () => {
         <div className={styles.nav__menu}>
           {/* <!-- menu items - larg screen --> */}
           <ul className={styles.nav__menu_list}>
-            <li>Home</li>
-            <li>Spaces</li>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <li>
+              Home<div></div>
+            </li>
+            <li>
+              Spaces<div></div>
+            </li>
+            <li>
+              About<div></div>
+            </li>
+            <li>
+              Blog<div></div>
+            </li>
+            <li>
+              Contact<div></div>
+            </li>
           </ul>
 
           {/* <!-- Social Icons on Larg screen --> */}
