@@ -1,10 +1,12 @@
 import style from "./Header.module.scss";
 import { FaSlideshare } from "react-icons/fa";
-import { MdKeyboardArrowRight as RightArrow } from "react-icons/md";
-import { MdKeyboardArrowLeft as LeftArrow } from "react-icons/md";
-import "animate.css";
-import { useState } from "react";
+import { AiFillStar } from "react-icons/ai";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Slider from "../Slider/Slider";
 
+// Path of Images of Slider
 const images = [
   "/assets/images/header2.jpg",
   "/assets/images/header1.jpg",
@@ -12,27 +14,14 @@ const images = [
 ];
 
 const Header = () => {
-  const [index, setIndex] = useState(0);
-  const imgsLength = images.length - 1;
-  const goToNextPicture = () => {
-    if (index < imgsLength) {
-      setIndex((prevIndex) => prevIndex + 1);
-    } else {
-      setIndex(0);
-    }
-  };
-
-  const goToPrevPicture = () => {
-    if (index > 0) {
-      setIndex((prevIndex) => prevIndex - 1);
-    } else {
-      setIndex(imgsLength);
-    }
-  };
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <header className={style.header}>
-      <div className={style.header__wrapper}>
+    <header className={style.header} data>
+      <div className={style.header__wrapper} data-aos="fade-left">
         <div className={style.header__wrapper_section1}>
           <div className={style.header__wrapper_section1_content}>
             <FaSlideshare />
@@ -47,16 +36,27 @@ const Header = () => {
         </div>
 
         <div className={style.header__wrapper_section2}>
-          <div className="animate__animated animate__fadeInUp">
-            <img src={images[index]} alt={images[index]} />
-          </div>
+          {/* images slider */}
+          <Slider images={images} />
 
-          <div className={style.header__wrapper_section2_arrows}>
-            <div>
-              <LeftArrow onClick={goToNextPicture} />
+          {/* review Label on image */}
+          <div className={style.header__wrapper_section2_reviewLabel}>
+              <div>
+            <div className={style.header__wrapper_section2_reviewLabel_score}>
+              <span>4.8</span>
             </div>
-            <div>
-              <RightArrow onClick={goToPrevPicture} />
+            <div className={style.header__wrapper_section2_reviewLabel_review}>
+                <p>Rating based on 500+ reviews</p>
+                <div
+                  className={style.header__wrapper_section2_reviewLabel_star}
+                >
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                </div>
+              </div>
             </div>
           </div>
         </div>

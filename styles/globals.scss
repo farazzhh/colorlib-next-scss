@@ -13,21 +13,16 @@ html {
   transition: all 0.2s ease-out;
 }
 
-body {
+main {
   position: relative;
   max-width: 100vw;
   overflow-x: hidden;
-}
 
-li {
-  list-style: none;
-}
-
-.slide-to-right {
-  transform: none;
-}
-
-.opacity{
-opacity: 0;
-width: 0;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  li {
+    list-style: none;
+  }
 }
