@@ -30,9 +30,15 @@
   }
   &_left {
     left: 25px;
+    @media (max-width: 768px) {
+   left: 10px;
+  }
   }
   &_right {
     right: 25px;
+    @media (max-width: 768px) {
+      right: 10px;
+  }
   }
   div {
     --animate-duration: 1.3s;
