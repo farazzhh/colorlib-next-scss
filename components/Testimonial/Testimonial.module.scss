@@ -37,13 +37,13 @@
       }
       h3 {
         font-size: 30px;
-        border-bottom: 2px solid darkgray;
         font-style: normal;
         font-weight: 700;
         line-height: 42px;
         color: rgb(7, 35, 102);
-
+        
         @media (max-width: 480px) {
+          border-bottom: 2px solid darkgray;
           font-size: 20px;
         }
 
